@@ -63,11 +63,11 @@ function Validate() {
     var date = $('#date').val();
 
     testAge = IsNumeric(age) && age >= 0;
-    if(!testAge) alert('Напиши людськтй вік, ублюдок!');
+    if(!testAge) alert('Введи реальний вік, будь ласка');
     testUser = testOnUser(user);
-    if(!testUser) alert('Та навіть я, називаю тебе краще ніж ти сам написав!');
+    if(!testUser) alert('Введи руальне ім*я');
     testDate = isValidDate(date);
-    if(!testDate) alert('Напиши норм дату, бо в цей час я твою мамку в кіно водив!');
+    if(!testDate) alert('Введи сьогоднішню дату');
 
     return testAge && testUser && testDate;
 }
