@@ -1,15 +1,15 @@
 var applyLanguage = function (lang) {
     alert('now language is: ' + lang);
-}
+};
 
 var getCurrentLanguage = function () {
     var defaultLanguage = 'ua';
     //
 
     return defaultLanguage;
-}
+};
 
-var currentLang = getCurrentLanguage();
+var currentLang;
 var langEls = document.getElementsByClassName('lang-' + currentLang);
 
 for (var i = 0; i < langEls.length; i++) {
@@ -36,13 +36,7 @@ for (var j = 0, max = radios.length; j < max; j++) {
 }
 
 function changeLang(lang) {
-    // var langs = document.getElementsByClassName('lang');
-    // langs.forEach(function (item, i, arr) {
-    //    item.style.display = 'none';
-    // });
-
-
-    // if(curLang == undefined) return;
+    alert(currentLang);
     var ol = document.getElementsByClassName('lang-' + currentLang);
     ol = Array.prototype.slice.call(ol);
     ol.forEach(function (item, i, arr) {
@@ -55,6 +49,7 @@ function changeLang(lang) {
         item.classList.add('visible');
     });
 
+    applyLanguage(lang);
 }
 
 
@@ -66,15 +61,18 @@ $save.addEventListener('click', function () {
 });
 
 function saveInCookie(lang) {
-    document.cookie = 'lang='+lang;
+    document.cookie = 'lang=' + lang;
 }
 
 function loadLangFromCookie() {
     var lfc = getCookie('lang');
     console.log(lfc);
-    
-    if(lfc != undefined)
+
+    currentLang = getCurrentLanguage();
+    if (lfc != undefined) {
+        currentLang = lfc;
         changeLang(lfc);
+    }
 }
 
 loadLangFromCookie();
@@ -83,7 +81,7 @@ function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
