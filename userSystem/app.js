@@ -83,11 +83,13 @@ function addNewEmploye() {
 
     empl = new Employe(fn, sn, s, p);
 
-    if (!checkIfExist(empl) && isSlot() && getAvarageSalery()) {
+    if (!checkIfExist(empl) && isSlot() && isAvarageSalery()) {
         employees.push(empl);
         renderEmpl(empl);
 
         hidePopup();
+        
+        $('#sal').html('Average salary: ' + getAvarageSalery() + '$');
     }
 }
 
@@ -110,7 +112,7 @@ function checkIfExist(empl) {
     var check = false;
 
     employees.forEach(function (item, i, arr) {
-        console.log(empl.getInfo() == item.getInfo());
+        // console.log(empl.getInfo() == item.getInfo());
 
         check = empl.getInfo() == item.getInfo();
         if (check) {
@@ -124,22 +126,31 @@ function checkIfExist(empl) {
 function isSlot() {
     var s = true;
     if (employees.length > 0) s = limit > employees.length;
-    // console.log(s);
     return s;
 }
 
-function getAvarageSalery() {
+function isAvarageSalery() {
     var salery = true;
 
     if (employees.length > 0) {
-        var total = 0;
-
-        employees.forEach(function (item, i, arr) {
-            total += item.getSalery();
-        });
-
-        salery = total / employees.length < maxAvgSalery;
+        salery = getAvarageSalery() < maxAvgSalery;
     }
 
     return salery;
+}
+
+function getAvarageSalery() {
+    var total = 0;
+
+    if (employees.length > 0) {
+
+        employees.forEach(function (item, i, arr) {
+            total += parseInt(item.getSalery());
+        });
+
+        total /= employees.length;
+    }
+
+    console.log(total);
+    return Math.round(total);
 }
