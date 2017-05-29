@@ -20,7 +20,9 @@
 .empl span{
     padding: 3px 6px;
 }
-
+.employeeSalary::before{
+    content: '$';
+}
 
 #modal_form {
     width: 300px;
