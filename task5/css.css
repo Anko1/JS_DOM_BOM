@@ -1,0 +1,40 @@
+body{
+    height: 60vh;
+    margin: 20vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#box1 {
+    background: red;
+    width: 200px; height: 200px;
+}
+
+#box2 {
+    background: green;
+    width: 150px; height: 150px;
+}
+
+#box3 {
+    background: blue;
+    width: 100px; height: 100px;
+}
+#box4 {
+    background: red;
+    width: 200px; height: 200px;
+}
+
+#box5 {
+    background: green;
+    width: 150px; height: 150px;
+}
+
+#box6 {
+    background: blue;
+    width: 100px; height: 100px;
+}
+#link{
+    height: 100%;
+    font-size: 24px;
+}

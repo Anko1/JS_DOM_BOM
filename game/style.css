@@ -1,0 +1,25 @@
+body{
+    background: url('http://i406.photobucket.com/albums/pp147/Alaisx/grass1p.png');
+}
+div#player {
+    width: 20px;
+    height: 20px;
+    background: red;
+
+    transition: all 0.3s ease-out 0s;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.bullet{
+    display: inline-block;
+    width: 4px;
+    height: 10px;
+    background-color: red;
+
+    transition: all 0.3s ease-out 0s;
+
+    position: absolute;
+}

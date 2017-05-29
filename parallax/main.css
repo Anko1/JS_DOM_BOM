@@ -1,0 +1,23 @@
+h1 {
+  margin: 0;
+}
+
+.content {
+  background: blue;
+  height: 600px;
+}
+.header {
+	height: 330px;
+}
+#parallax {
+  
+  background: url(http://www.verticalworld.net/school/programs/uploads/pics/program_108_1.jpg) no-repeat;
+  background-size: 100%;
+      height: 500px; 
+      background-attachment: fixed;
+
+
+    /* Create the parallax scrolling effect */
+    
+
+}

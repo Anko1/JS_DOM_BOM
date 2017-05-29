@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<a href="http://stepansuvorov.com/blog/2013/05/%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D0%B5-preventdefault-stoppropagation-%D0%B8-stopimmediatepropagation/" id="info">preventDefault vs stopPropagation</a>
+
+    <div id="box1" class="box">
+        <div id="box2" class="box">
+            <div id="box3" class="box">
+                (stopPropagation)
+            </div>
+        </div>
+    </div>
+
+    <div id="pd">
+        <a id="link" href="https://www.google.com.ua">this is link(preventDefault)</a>
+        this is div
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

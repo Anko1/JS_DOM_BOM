@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrapper">
+    <div class="list">
+        <ul id="el" class="employeeList">
+            <li class="empl">
+                <span class="employeeFirstName">John</span>
+                <span class="employeeLastName">Doe</span>
+                <span class="employeeSalary">$ 1000</span>
+                <span class="employeePosition">Manager</span>
+            </li>
+        </ul>
+    </div>
+    <div class="control">
+        <label for="limit"></label>
+        <input id="limit" type="range" min="0" max="100" step="1" value="10">
+
+        <button id="add" class="addEmployee">Add New emplyee</button>
+    </div>
+</div>
+
+
+<div id="modal_form"><!-- Сaмo oкнo -->
+    <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
+    <!-- Тут любoе сoдержимoе -->
+    <div class="m-wrap">
+        <input id="fn" type="text" required>
+        <input id="sn" type="text" required>
+        <input id="s" type="number" required>
+        <select name="pos" id="p">
+            <option>Trainee</option>
+            <option>Junior</option>
+            <option>Middle</option>
+            <option>Senior</option>
+            <option>Lead</option>
+        </select>
+
+        <button onclick="addNewEmploye();">Add</button>
+    </div>
+</div>
+<div id="overlay"></div><!-- Пoдлoжкa -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
